@@ -1,0 +1,11 @@
+#sorting used here because it's not a subarray and doesn't need to be in sequence
+
+def maximumToys(prices, k):
+    max_concat,temp = 0,0
+    prices.sort()
+    for val in prices:
+        if temp+val<=k:
+            temp+=val
+            max_concat+=1
+        else:
+            return max_concat 
